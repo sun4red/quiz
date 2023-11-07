@@ -81,8 +81,6 @@ public class Q1695 {
 	public static void main(String[] args) {
 
 		Test t = new Test();
-		
-		// ======= 2차시도 실패 ============
 
 		Scanner sc = new Scanner(System.in);
 

@@ -63,16 +63,6 @@ class Test {
 
 		return array;
 	}
-	
-	public void result(int n, List<Integer> list){
-		
-		System.out.print(n + "차 결과 값 : { ");
-		for(int i = 0; i < list.size(); i++) {
-			System.out.print(list.get(i) + " ");
-		}
-		System.out.println("}");
-		
-	}
 
 }
 
@@ -81,29 +71,25 @@ public class Q1695 {
 	public static void main(String[] args) {
 
 		Test t = new Test();
-		
-		// ======= 2차시도 실패 ============
 
 		Scanner sc = new Scanner(System.in);
 
 		int N = 0;
-		N = 12;
 		// N = sc.nextInt();
 
 		List<Integer> list = new ArrayList<Integer>();
 
-		// for (int i = 0; i < N; i++) {
-		// list.add(sc.nextInt());
-		// }
+		for (int i = 0; i < N; i++) {
+			list.add(sc.nextInt());
+		}
 
 		t.case2(N, list);
-
-		t.result(0,list);
 
 		int N0 = 0;
 		int N1 = N - 1;
 		int N2 = N - 1;
 
+		while (true) {
 
 			if (list.get(N0) == list.get(N1)) {
 				N0 += 1;
@@ -116,7 +102,7 @@ public class Q1695 {
 				int right = 0;
 				int insert = 0;
 
-				while (insert == 0) {
+				while (true) {
 					if (list.get(N0) != list.get(N1 - left)) {
 						left++;
 						if (list.get(N0) == list.get(N1 - left)) {
@@ -146,14 +132,13 @@ public class Q1695 {
 				N0 = N0 + left;
 				N1 = N1 + left;
 
-				System.out.println("left : " + left);
-				System.out.println("right : " + right);
-				System.out.println("insert : " + insert);
-				
 			}
-
-t.result(0, list);
-		
+		}
+		System.out.print("변경된 수열 : { ");
+		for (int i = 0; i < list.size(); i++) {
+			System.out.print(list.get(i) + " ");
+		}
+		System.out.println("}");
 
 		/*
 		 * 
@@ -200,5 +185,5 @@ t.result(0, list);
 		 * 
 		 */
 
-	}	// main end
-}		// class end
+	}
+}
